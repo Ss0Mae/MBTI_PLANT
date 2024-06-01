@@ -1,1 +1,30 @@
-this is polls.html
+<!-- poll/templates/poll/polls.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}">
+</head>
+<body>
+    <h1>Survey</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for category, category_name in categories.items %}
+            <h2>{{ category_name }}</h2>
+            {% for question in questions %}
+                {% if question.category == category %}
+                    <div>
+                        <p>{{ question.text }}</p>
+                        <input type="radio" id="yes_{{ forloop.counter }}" name="response_{{ forloop.counter }}" value="yes">
+                        <label for="yes_{{ forloop.counter }}">예</label>
+                        <input type="radio" id="no_{{ forloop.counter }}" name="response_{{ forloop.counter }}" value="no">
+                        <label for="no_{{ forloop.counter }}">아니오</label>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
