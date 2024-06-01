@@ -4,6 +4,7 @@
     <title>Survey</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}">
+    <script src="{% static 'poll/scripts.js' %}" defer></script>
 </head>
 <body>
     <h1>Survey</h1>
@@ -12,9 +13,9 @@
         {% for category, questions in questions.items %}
             <h2>{{ category }}</h2>
             {% for question in questions %}
-                <div>
-                    <label>{{ question.question }}</label><br>
-                    <input type="radio" name="{{ question.number }}" value="yes"> 예<br>
+                <div class="question">
+                    <label>{{ question.question }}</label>
+                    <input type="radio" name="{{ question.number }}" value="yes"> 예
                     <input type="radio" name="{{ question.number }}" value="no"> 아니오
                 </div>
             {% endfor %}
