@@ -1,6 +1,7 @@
 # poll/views.py
 from django.shortcuts import render, redirect
 
+
 def survey(request):
     questions = {
         'EI': [
@@ -61,14 +62,64 @@ def survey(request):
         ]
     }
 
-    if request.method == 'POST':
-        responses = {key: request.POST[key] for key in request.POST if key.startswith('q')}
-        return render(request, 'poll/result.html', {'responses': responses})
-
     context = {
         'questions': questions,
     }
     return render(request, 'poll/polls.html', context)
 
+
 def result(request):
-    return render(request, 'poll/result.html')
+    if request.method == 'POST':
+        responses = {key: request.POST[key] for key in request.POST if key.startswith('q')}
+        mbti = calculateMbti(responses)
+
+        # mbti = 'ESTJ'
+        if mbti == 'ESTJ':
+            return render(request, 'poll/estj.html')
+        elif mbti == 'ESTP':
+            return render(request, 'poll/estp.html')
+        elif mbti == 'ESFJ':
+            return render(request, 'poll/esfj.html')
+        elif mbti == 'ESFP':
+            return render(request, 'poll/esfp.html')
+        elif mbti == 'ENTJ':
+            return render(request, 'poll/entj.html')
+        elif mbti == 'ENTP':
+            return render(request, 'poll/entp.html')
+        elif mbti == 'ENFJ':
+            return render(request, 'poll/enfj.html')
+        elif mbti == 'ENFP':
+            return render(request, 'poll/enfp.html')
+        elif mbti == 'ISTJ':
+            return render(request, 'poll/istj.html')
+        elif mbti == 'ISTP':
+            return render(request, 'poll/istp.html')
+        elif mbti == 'ISFJ':
+            return render(request, 'poll/isfj.html')
+        elif mbti == 'ISFP':
+            return render(request, 'poll/isfp.html')
+        elif mbti == 'INTJ':
+            return render(request, 'poll/intj.html')
+        elif mbti == 'INTP':
+            return render(request, 'poll/intp.html')
+        elif mbti == 'INFJ':
+            return render(request, 'poll/infj.html')
+        elif mbti == 'INFP':
+            return render(request, 'poll/infp.html')
+
+    return render(request, 'poll/result.html')  # get 방식 요청 응답
+
+
+def calculateMbti(responses):
+    # ToDo: 승현님 작업 : responses 바탕으로 mbti 산출하기, (calculate 브랜치 생성 후 작업 요망)
+    # input : {'key' : 'value'} 각 질문 번호에 대한 응답이 담겨 있는 딕셔너리 형태, ex) {'q1' : 'yes'}
+    # output : 'ESTJ' 등의 MBTI를 나타내는 문자열 return
+    mbti = ''
+    # E/I (q1 ~ q12)
+
+    # S/N (q13 ~ q24)
+
+    # T/F (q25 ~ q36)
+
+    # J/P (q37 ~ q48)
+    return mbti
