@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Survey</title>
@@ -8,19 +7,27 @@
 </head>
 <body>
     <h1>Survey</h1>
-    <form method="post">
-        {% csrf_token %}
-        {% for category, questions in questions.items %}
-            <h2>{{ category }}</h2>
-            {% for question in questions %}
-                <div class="question">
-                    <label>{{ question.question }}</label>
-                    <input type="radio" name="{{ question.number }}" value="yes"> 예
-                    <input type="radio" name="{{ question.number }}" value="no"> 아니오
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {% for category, questions in questions.items %}
+                <div class="category" data-category="{{ category }}">
+                    <h2>{{ category }}</h2>
+                    {% for question in questions %}
+                        <div class="question">
+                            <label>{{ question.question }}</label>
+                            <input type="radio" name="{{ question.number }}" value="yes"> 예
+                            <input type="radio" name="{{ question.number }}" value="no"> 아니오
+                        </div>
+                    {% endfor %}
                 </div>
             {% endfor %}
-        {% endfor %}
-        <button type="submit">Submit</button>
-    </form>
+            <div class="navigation-buttons">
+                <button type="button" id="prevButton" class="nav-button" style="display:none;">&#9664; Previous</button>
+                <button type="button" id="nextButton" class="nav-button">Next &#9654;</button>
+                <button type="submit" id="submitButton" class="nav-button" style="display:none;">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
