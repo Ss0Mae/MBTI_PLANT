@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 def survey(request):
     questions = {
-        'EI': [
+        '외향형(E) vs 내향형(I)': [
             {'number': 'q1', 'question': '당신은 주말에 사람들과 함께 보내는 시간을 즐기나요?'},
             {'number': 'q2', 'question': '새로운 사람들과 쉽게 친구가 되나요?'},
             {'number': 'q3', 'question': '에너지를 얻기 위해 사람들과 어울리나요?'},
@@ -12,7 +12,7 @@ def survey(request):
             {'number': 'q5', 'question': '외출을 자주 계획하고 실행하나요?'},
             {'number': 'q6', 'question': '즉흥적인 활동을 즐기나요?'},
         ],
-        'SN': [
+        '감각형(S) vs 직관형(N)': [
             {'number': 'q7', 'question': '당신은 현재의 사실과 세부 사항에 집중하나요?'},
             {'number': 'q8', 'question': '실질적이고 구체적인 정보를 선호하나요?'},
             {'number': 'q9', 'question': '경험에 기반한 결정을 내리나요?'},
@@ -20,7 +20,7 @@ def survey(request):
             {'number': 'q11', 'question': '눈에 보이는 현실을 믿나요?'},
             {'number': 'q12', 'question': '구체적이고 현실적인 목표를 설정하나요?'},
         ],
-        'TF': [
+        '사고형(T) vs 감정형(F)': [
             {'number': 'q13', 'question': '당신은 결정을 내릴 때 논리와 분석을 중시하나요?'},
             {'number': 'q14', 'question': '공정성과 객관성을 중요하게 생각하나요?'},
             {'number': 'q15', 'question': '비판적이고 논리적인 사고를 자주 하나요?'},
@@ -28,7 +28,7 @@ def survey(request):
             {'number': 'q17', 'question': '갈등 상황에서 논리적이고 객관적인 접근을 하나요?'},
             {'number': 'q18', 'question': '의사결정 시 사실과 데이터를 중요시하나요?'},
         ],
-        'JP': [
+        '판단형(J) vs 인식형(P)': [
             {'number': 'q19', 'question': '당신은 계획을 세우고 그에 따라 행동하는 것을 좋아하나요?'},
             {'number': 'q20', 'question': '마감일을 지키기 위해 계획을 세우나요?'},
             {'number': 'q21', 'question': '체계적이고 조직적으로 일을 처리하나요?'},
