@@ -1,6 +1,50 @@
-/* poll/static/poll/scripts.js */
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
+    const categories = document.querySelectorAll('.category');
+    const nextButton = document.getElementById('nextButton');
+    const prevButton = document.getElementById('prevButton');
+    const submitButton = document.getElementById('submitButton');
+    let currentCategory = 0;
+
+    categories[currentCategory].classList.add('active');
+    nextButton.classList.add('first-page');
+
+    nextButton.addEventListener('click', () => {
+        if (currentCategory < categories.length - 1) {
+            categories[currentCategory].classList.remove('active');
+            currentCategory++;
+            categories[currentCategory].classList.add('active');
+        }
+        updateButtons();
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentCategory > 0) {
+            categories[currentCategory].classList.remove('active');
+            currentCategory--;
+            categories[currentCategory].classList.add('active');
+        }
+        updateButtons();
+    });
+
+    function updateButtons() {
+        if (currentCategory === 0) {
+            prevButton.style.display = 'none';
+            nextButton.classList.add('first-page');
+        } else {
+            prevButton.style.display = 'inline-block';
+            nextButton.classList.remove('first-page');
+        }
+
+        if (currentCategory === categories.length - 1) {
+            nextButton.style.display = 'none';
+            submitButton.style.display = 'inline-block';
+        } else {
+            nextButton.style.display = 'inline-block';
+            submitButton.style.display = 'none';
+        }
+    }
+
     form.addEventListener('submit', (e) => {
         const questions = form.querySelectorAll('.question');
         let allAnswered = true;
@@ -27,14 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 추가 인터랙티브 효과
-    const questions = document.querySelectorAll('.question');
-    questions.forEach((question) => {
-        question.addEventListener('mouseenter', () => {
-            question.style.backgroundColor = '#f1f1f1';
-        });
-        question.addEventListener('mouseleave', () => {
-            question.style.backgroundColor = 'white';
-        });
-    });
+    updateButtons();
 });
