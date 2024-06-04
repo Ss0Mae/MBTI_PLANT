@@ -91,11 +91,46 @@ def calculateMbti(responses):
     # input : {'key' : 'value'} 각 질문 번호에 대한 응답이 담겨 있는 딕셔너리 형태, ex) {'q1' : 'yes'}
     # output : 'ESTJ' 등의 MBTI를 나타내는 문자열 return
     mbti = ''
-    # E/I (q1 ~ q6)
+    ei_count = 0
+    sn_count = 0
+    tf_count = 0
+    jp_count = 0
 
-    # S/N (q7 ~ q12)
+    ei_questions = range(1, 13)
+    sn_questions = range(13, 25)
+    tf_questions = range(25, 37)
+    jp_questions = range(37, 49)
 
-    # T/F (q13 ~ q18)
+    for i in ei_questions:
+        if responses.get(f'q{i}') == 'yes':
+            ei_count += 1
+        else:
+            ei_count -= 1
 
-    # J/P (q19 ~ q24)
+    for i in sn_questions:
+        if responses.get(f'q{i}') == 'yes':
+            sn_count += 1
+        else:
+            sn_count -= 1
+
+    for i in tf_questions:
+        if responses.get(f'q{i}') == 'yes':
+            tf_count += 1
+        else:
+            tf_count -= 1
+
+    for i in jp_questions:
+        if responses.get(f'q{i}') == 'yes':
+            jp_count += 1
+        else:
+            jp_count -= 1
+
+
+
+    mbti = ''
+    mbti += 'E' if ei_count > 0 else 'I'
+    mbti += 'S' if sn_count > 0 else 'N'
+    mbti += 'T' if tf_count > 0 else 'F'
+    mbti += 'J' if jp_count > 0 else 'P'
+
     return mbti
