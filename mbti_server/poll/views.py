@@ -87,9 +87,7 @@ def result(request):
 
 
 def calculateMbti(responses):
-    # ToDo: 승현님 작업 : responses 바탕으로 mbti 산출하기, (calculate 브랜치 생성 후 작업 요망)
-    # input : {'key' : 'value'} 각 질문 번호에 대한 응답이 담겨 있는 딕셔너리 형태, ex) {'q1' : 'yes'}
-    # output : 'ESTJ' 등의 MBTI를 나타내는 문자열 return
+    
     mbti = ''
     ei_count = 0
     sn_count = 0
@@ -126,8 +124,6 @@ def calculateMbti(responses):
             jp_count -= 1
 
 
-
-    mbti = ''
     mbti += 'E' if ei_count > 0 else 'I'
     mbti += 'S' if sn_count > 0 else 'N'
     mbti += 'T' if tf_count > 0 else 'F'
