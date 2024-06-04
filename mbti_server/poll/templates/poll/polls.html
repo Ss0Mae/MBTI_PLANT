@@ -8,7 +8,7 @@
 <body>
     <h1>Survey</h1>
     <div class="container">
-        <form method="post">
+        <form action="/result/" method="post">
             {% csrf_token %}
             {% for category, questions in questions.items %}
                 <div class="category" data-category="{{ category }}">

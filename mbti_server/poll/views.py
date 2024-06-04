@@ -2,6 +2,9 @@
 from django.shortcuts import render, redirect
 
 
+def mainpage(request):
+    return render(request, 'poll/main.html')
+
 def survey(request):
     questions = {
         '외향형(E) vs 내향형(I)': [
