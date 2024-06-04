@@ -96,10 +96,10 @@ def calculateMbti(responses):
     tf_count = 0
     jp_count = 0
 
-    ei_questions = range(1, 13)
-    sn_questions = range(13, 25)
-    tf_questions = range(25, 37)
-    jp_questions = range(37, 49)
+    ei_questions = range(1, 6)
+    sn_questions = range(7, 12)
+    tf_questions = range(13, 18)
+    jp_questions = range(19, 24)
 
     for i in ei_questions:
         if responses.get(f'q{i}') == 'yes':
