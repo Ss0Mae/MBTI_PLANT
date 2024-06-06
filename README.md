@@ -36,9 +36,9 @@ python manage.py runserver --insecure
 
 ---
 - Chang-in Baek (Server Developer) : qorckddls010@gmail.com
-- 조준용 :
-- 조성민 :
-- 고승현 : 
+- 조준용 : juneyong87@gmail.com
+- 조성민 : jtysm28501@gmail.com
+- 고승현 : rhtmdgus435892@gmail.com
 
 
 ## License
