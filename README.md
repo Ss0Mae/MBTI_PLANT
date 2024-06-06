@@ -1,17 +1,10 @@
 # MBTI_PLANT
-
----
-
 설문 기반 맞춤형 반려 식물 추천 서비스
 
 ## Connection link
-
----
 <http://43.200.105.74:8080/>
 
 ## Installation & Run (Server only)
-
----
 ```commandline
 pip install -r requirements.txt
 python manage.py runserver --insecure
@@ -20,8 +13,6 @@ python manage.py runserver --insecure
 (Recommended to use virtual environments)
 
 ## Requirements
-
----
 ```
 - asgiref==3.8.1
 - Django==5.0.6
@@ -33,8 +24,6 @@ python manage.py runserver --insecure
 
 
 ## Contributing & Contact
-
----
 - Chang-in Baek (Server Developer) : qorckddls010@gmail.com
 - 조준용 : juneyong87@gmail.com
 - 조성민 : jtysm28501@gmail.com
@@ -42,8 +31,6 @@ python manage.py runserver --insecure
 
 
 ## License
-
----
 - BSD 3-Clause "New" or "Revised" License
 - Following python django license
 - <https://github.com/django/django/blob/main/LICENSE>
