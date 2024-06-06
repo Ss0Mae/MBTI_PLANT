@@ -38,8 +38,8 @@ h1 {
 }
 
 .share-button img {
-    width: 100px; /* 이미지 크기 조절 */
-    height: 100px;
+    width: 80px; /* 이미지 크기 조절 */
+    height: 80px;
     padding: 10px;
     cursor: pointer;
 }
