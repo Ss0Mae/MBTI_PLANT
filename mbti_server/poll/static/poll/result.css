@@ -32,3 +32,14 @@ h1 {
     height: 100vh; /* 화면 세로 높이에 맞게 설정 */
     width: auto; /* 가로 비율은 자동 조절 */
 }
+
+.button-container {
+    padding: 10px;
+}
+
+.share-button img {
+    width: 100px; /* 이미지 크기 조절 */
+    height: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
