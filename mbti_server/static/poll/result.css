@@ -34,12 +34,15 @@ h1 {
 }
 
 .button-container {
+    display: flex;
+    text-decoration: none;
+    gap: 30px;
     padding: 10px;
 }
 
 .share-button img {
-    width: 80px; /* 이미지 크기 조절 */
+    display: block;
+    width: 80px;
     height: 80px;
-    padding: 10px;
     cursor: pointer;
 }

@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4a8s*s@58qw1ql=nk^a_yf7b*lfg^^l^wn$ijda9b2xjr9(3h-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
-# ALLOWED_HOSTS = ["43.200.105.74"]   # AWS server ip
+# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["43.200.105.74"]   # AWS server ip
 # runserver --insecure 하면 디버그 false여도 스태틱 파일 가능
 # STATIC_ROOT = BASE_DIR / 'static/'
 
